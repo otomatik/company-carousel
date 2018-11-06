@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress should match snapshot 1`] = `
+<styled.div>
+  <styled.div
+    percentage={42}
+  />
+</styled.div>
+`;
