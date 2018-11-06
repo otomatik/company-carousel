@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Tile } from './tile';
-import { computeAreasCount } from './carousel';
+import { Tile } from '../tile';
+import { computeAreasCount } from '../carousel';
 
 export const TILE_COUNT = 9;
 

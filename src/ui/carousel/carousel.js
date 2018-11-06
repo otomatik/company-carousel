@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Progress } from './progress';
-import { Grid, TILE_COUNT } from './grid';
+import { Progress } from '../progress';
+import { Grid, TILE_COUNT } from '../grid';
 
 export const computeAreasCount = (totalTiles, columns, rows) =>
   Math.ceil(totalTiles / Math.max(columns * rows, 1));

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid should match snapshot 1`] = `
+<styled.div
+  columns={2}
+  currentArea={0}
+  rows={2}
+  totalColumns={6}
+>
+  <Tile
+    color="orange"
+  />
+  <Tile
+    color="red"
+  />
+  <Tile
+    color="green"
+  />
+  <Tile
+    color="blue"
+  />
+  <Tile
+    color="violet"
+  />
+  <Tile
+    color="black"
+  />
+  <Tile
+    color="gray"
+  />
+  <Tile
+    color="purple"
+  />
+  <Tile
+    color="yellow"
+  />
+</styled.div>
+`;

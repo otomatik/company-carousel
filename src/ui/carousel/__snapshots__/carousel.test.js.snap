@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel should match snapshot 1`] = `
+<styled.div
+  columns={2}
+>
+  <styled.div>
+    header
+  </styled.div>
+  <styled.div>
+    <Grid
+      columns={2}
+      currentArea={1}
+      rows={2}
+    />
+  </styled.div>
+  <Progress
+    percentage={66.66666666666667}
+  />
+  <styled.div>
+    footer
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Carousel should match snapshot when is mobile column is overridden to "1" 1`] = `
+<styled.div
+  columns={1}
+>
+  <styled.div>
+    header
+  </styled.div>
+  <styled.div>
+    <Grid
+      columns={1}
+      currentArea={1}
+      rows={2}
+    />
+  </styled.div>
+  <Progress
+    percentage={40}
+  />
+  <styled.div>
+    footer
+  </styled.div>
+</styled.div>
+`;

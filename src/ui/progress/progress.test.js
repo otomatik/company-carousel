@@ -1,4 +1,4 @@
-import { Progress } from './progress';
+import { Progress } from './';
 import { shallow } from 'enzyme';
 import React from 'react';
 
