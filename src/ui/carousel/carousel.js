@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Progress } from '../progress';
-import { Grid, TILE_COUNT } from '../grid';
+import { Grid } from '../grid';
 
 export const computeAreasCount = (totalTiles, columns, rows) =>
   Math.ceil(totalTiles / Math.max(columns * rows, 1));
 
-export const Carousel = ({ mobile, cursor, columns, rows }) => {
+export const Carousel = ({ mobile, cursor, columns, rows, data }) => {
   if (mobile) {
     columns = 1;
   }
 
-  const areasCount = computeAreasCount(TILE_COUNT, columns, rows);
+  const areasCount = computeAreasCount(data.length, columns, rows);
   const avoidDivisionByZero = Math.max(areasCount, 1);
   const percentage = ((cursor + 1) * 100) / avoidDivisionByZero;
 
@@ -19,6 +19,7 @@ export const Carousel = ({ mobile, cursor, columns, rows }) => {
     currentArea: cursor,
     columns,
     rows,
+    tiles: data,
   };
   return (
     <Container columns={columns}>

@@ -5,34 +5,25 @@ exports[`Grid should match snapshot 1`] = `
   columns={2}
   currentArea={0}
   rows={2}
-  totalColumns={6}
+  totalColumns={2}
 >
-  <Tile
-    color="orange"
+  <QuoteTile
+    key="1"
+    text="essai"
   />
-  <Tile
-    color="red"
+  <VideoTile
+    key="2"
+    thumbnail=""
+    url=""
   />
-  <Tile
-    color="green"
+  <PhotoTile
+    key="3"
+    thumbnail=""
+    url=""
   />
-  <Tile
-    color="blue"
-  />
-  <Tile
-    color="violet"
-  />
-  <Tile
-    color="black"
-  />
-  <Tile
-    color="gray"
-  />
-  <Tile
-    color="purple"
-  />
-  <Tile
-    color="yellow"
+  <QuoteTile
+    key="4"
+    text="essai"
   />
 </styled.div>
 `;

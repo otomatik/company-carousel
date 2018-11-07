@@ -2,27 +2,35 @@ import React from 'react';
 import styled from 'styled-components';
 import { Tile } from '../tile';
 import { computeAreasCount } from '../carousel';
+import { PhotoTile, QuoteTile, VideoTile } from '../tile/tile';
 
-export const TILE_COUNT = 9;
+const switchTile = tile => {
+  const props = {
+    ...tile.data,
+    key: tile.id,
+  };
+  switch (tile.kind) {
+    case 'quote':
+      return <QuoteTile {...props} />;
+    case 'video':
+      return <VideoTile {...props} />;
+    case 'photo':
+      return <PhotoTile {...props} />;
+    default:
+      return <></>;
+  }
+};
 
-export const Grid = ({ columns, rows, currentArea }) => {
+export const Grid = ({ columns, rows, currentArea, tiles }) => {
   const containerProps = {
-    totalColumns: columns * computeAreasCount(TILE_COUNT, columns, rows),
+    totalColumns: columns * computeAreasCount(tiles.length, columns, rows),
     columns,
     rows,
     currentArea,
   };
   return (
     <Container {...containerProps}>
-      <Tile color="orange" />
-      <Tile color="red" />
-      <Tile color="green" />
-      <Tile color="blue" />
-      <Tile color="violet" />
-      <Tile color="black" />
-      <Tile color="gray" />
-      <Tile color="purple" />
-      <Tile color="yellow" />
+      {tiles.map(tile => switchTile(tile))}
     </Container>
   );
 };

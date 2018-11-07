@@ -17,5 +17,5 @@ const Fill = styled.div`
   height: 100%;
   width: ${props => props.percentage}%;
   transition: width 300ms ease-in-out;
-  background: #50805d;
+  background: rgb(0, 194, 154);
 `;
