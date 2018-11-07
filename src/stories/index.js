@@ -4,7 +4,7 @@ import { Progress } from '../ui/progress';
 import { Carousel } from '../ui/carousel';
 import { Grid } from '../ui/grid';
 import { action } from '@storybook/addon-actions';
-import { number, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
 import { Navigation } from '../ui/button';
@@ -83,6 +83,7 @@ const data = {
 
 storiesOf('Carousel', module)
   .add('desktop', () => <Carousel data={data} columns={2} rows={2} />)
+  .add('autoplay', () => <Carousel autoplay data={data} columns={2} rows={2} />)
   .add('mobile', () => (
     <MobileContainer>
       <Carousel data={data} mobile rows={2} />
