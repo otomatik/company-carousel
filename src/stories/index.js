@@ -172,6 +172,6 @@ storiesOf('Progress', module)
 storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('arrows', () => [
-    <Navigation direction="left" onClick={action('clicked')} />,
-    <Navigation direction="right" onClick={action('clicked')} />,
+    <Navigation key="left" direction="left" onClick={action('clicked')} />,
+    <Navigation key="right" direction="right" onClick={action('clicked')} />,
   ]);

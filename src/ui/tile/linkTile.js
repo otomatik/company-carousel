@@ -4,7 +4,7 @@ import React from 'react';
 import { Tile, tilePropTypes } from './tile';
 
 export const LinkTile = ({ url, color, children }) => (
-  <Link href={url}>
+  <Link href={url} target="_blank">
     <Tile color={color}>{children}</Tile>
   </Link>
 );

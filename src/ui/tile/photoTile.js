@@ -3,7 +3,7 @@ import React from 'react';
 import { LinkTile, Thumbnail } from './linkTile';
 
 export const PhotoTile = ({ url, thumbnail }) => (
-  <LinkTile color="yellow" url={url}>
+  <LinkTile url={url}>
     <Thumbnail thumbnail={thumbnail} />
   </LinkTile>
 );

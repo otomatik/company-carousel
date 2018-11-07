@@ -3,7 +3,7 @@ import React from 'react';
 import { LinkTile, Thumbnail } from './linkTile';
 
 export const VideoTile = ({ url, thumbnail }) => (
-  <LinkTile color="red" url={url}>
+  <LinkTile url={url}>
     <Thumbnail thumbnail={thumbnail} />
   </LinkTile>
 );

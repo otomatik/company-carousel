@@ -3,6 +3,7 @@
 exports[`LinkTile should match snapshot 1`] = `
 <styled.a
   href="http://"
+  target="_blank"
 >
   <Tile
     color="yellow"
@@ -16,7 +17,9 @@ exports[`QuoteTile should match snapshot 1`] = `
 <Tile
   color="#444"
 >
-  coucou
+  <styled.blockquote>
+    coucou
+  </styled.blockquote>
 </Tile>
 `;
 
@@ -30,7 +33,6 @@ exports[`Tile should match snapshot 1`] = `
 
 exports[`VideoTile should match snapshot 1`] = `
 <LinkTile
-  color="red"
   url="http://"
 >
   <styled.div
@@ -41,7 +43,6 @@ exports[`VideoTile should match snapshot 1`] = `
 
 exports[`VideoTile should match snapshot 2`] = `
 <LinkTile
-  color="yellow"
   url="http://"
 >
   <styled.div
