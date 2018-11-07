@@ -3,7 +3,8 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 describe('Carousel', () => {
-  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const fakeTiles = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const data = { tiles: fakeTiles };
 
   it('should match snapshot', () => {
     // when

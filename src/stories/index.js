@@ -72,14 +72,21 @@ const tiles = [
   },
 ];
 
+const data = {
+  companyName: 'The boring company',
+  companyLogo: 'http://',
+  wttjProfile: 'http://',
+  tiles,
+};
+
 storiesOf('Carousel', module)
   .addDecorator(withKnobs)
   .add('desktop', () => (
-    <Carousel data={tiles} columns={2} rows={2} cursor={number('cursor', 0)} />
+    <Carousel data={data} columns={2} rows={2} cursor={number('cursor', 0)} />
   ))
   .add('mobile', () => (
     <MobileContainer>
-      <Carousel data={tiles} mobile rows={2} cursor={number('cursor', 0)} />
+      <Carousel data={data} mobile rows={2} cursor={number('cursor', 0)} />
     </MobileContainer>
   ));
 
