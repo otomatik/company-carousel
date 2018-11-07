@@ -1,7 +1,6 @@
-import { Tile } from './';
 import { shallow } from 'enzyme';
 import React from 'react';
-import { LinkTile, PhotoTile, QuoteTile, VideoTile } from './tile';
+import { Tile, LinkTile, PhotoTile, QuoteTile, VideoTile } from './';
 
 describe('Tile', () => {
   it('should match snapshot', () => {

@@ -14,7 +14,7 @@ exports[`LinkTile should match snapshot 1`] = `
 
 exports[`QuoteTile should match snapshot 1`] = `
 <Tile
-  color="#333"
+  color="#444"
 >
   coucou
 </Tile>

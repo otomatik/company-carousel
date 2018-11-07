@@ -57,7 +57,7 @@ const Header = styled.div`
 `;
 
 const Content = styled.div`
-  background: #666;
+  background: #333;
   color: white;
   height: calc(100% - 100px);
 `;

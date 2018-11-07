@@ -5,7 +5,18 @@ import { Carousel } from '../ui/carousel';
 import { Grid } from '../ui/grid';
 import { number, text, withKnobs } from '@storybook/addon-knobs';
 import styled from 'styled-components';
-import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile/tile';
+import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
+
+const images = {
+  laundry:
+    'https://cdn.pixabay.com/photo/2014/08/08/20/54/laundry-413688_1280.jpg',
+  suit: 'https://cdn.pixabay.com/photo/2015/03/14/19/45/suit-673697_1280.jpg',
+  cat: 'https://cdn.pixabay.com/photo/2015/10/12/15/01/cat-984097_1280.jpg',
+  sheep:
+    'https://cdn.pixabay.com/photo/2016/11/13/21/46/sheep-1822137_1280.jpg',
+  pug: 'https://cdn.pixabay.com/photo/2016/02/19/11/53/pug-1210025_1280.jpg',
+  dry: 'https://cdn.pixabay.com/photo/2015/01/01/22/15/woman-586185_1280.jpg',
+};
 
 const tiles = [
   {
@@ -16,12 +27,18 @@ const tiles = [
   {
     id: '2',
     kind: 'video',
-    data: { url: '', thumbnail: '' },
+    data: {
+      url: '',
+      thumbnail: images.suit,
+    },
   },
   {
     id: '3',
     kind: 'photo',
-    data: { url: '', thumbnail: '' },
+    data: {
+      url: '',
+      thumbnail: images.laundry,
+    },
   },
   {
     id: '4',
@@ -31,12 +48,12 @@ const tiles = [
   {
     id: '5',
     kind: 'video',
-    data: { url: '', thumbnail: '' },
+    data: { url: '', thumbnail: images.cat },
   },
   {
     id: '6',
     kind: 'photo',
-    data: { url: '', thumbnail: '' },
+    data: { url: '', thumbnail: images.pug },
   },
   {
     id: '7',
@@ -46,12 +63,12 @@ const tiles = [
   {
     id: '8',
     kind: 'video',
-    data: { url: '', thumbnail: '' },
+    data: { url: '', thumbnail: images.sheep },
   },
   {
     id: '9',
     kind: 'photo',
-    data: { url: '', thumbnail: '' },
+    data: { url: '', thumbnail: images.dry },
   },
 ];
 
@@ -61,8 +78,16 @@ storiesOf('Carousel', module)
     <Carousel data={tiles} columns={2} rows={2} cursor={number('cursor', 0)} />
   ))
   .add('mobile', () => (
-    <Carousel data={tiles} mobile rows={2} cursor={number('cursor', 0)} />
+    <MobileContainer>
+      <Carousel data={tiles} mobile rows={2} cursor={number('cursor', 0)} />
+    </MobileContainer>
   ));
+
+const MobileContainer = styled.div`
+  height: 100vh;
+  width: 30vw;
+  overflow: hidden;
+`;
 
 const GridContainer = styled.div`
   height: 100vh;
@@ -120,10 +145,7 @@ storiesOf('Tiles', module)
     <TileContainer>
       <PhotoTile
         url={text('url', 'http://')}
-        thumbnail={text(
-          'thumbnail',
-          'https://www.billboard.com/files/styles/900_wide/public/media/Green-Day-American-Idiot-album-covers-billboard-1000x1000.jpg'
-        )}
+        thumbnail={text('thumbnail', images.laundry)}
       />
     </TileContainer>
   ))
@@ -131,10 +153,7 @@ storiesOf('Tiles', module)
     <TileContainer>
       <VideoTile
         url={text('url', 'http://')}
-        thumbnail={text(
-          'thumbnail',
-          'https://www.billboard.com/files/styles/900_wide/public/media/Green-Day-American-Idiot-album-covers-billboard-1000x1000.jpg'
-        )}
+        thumbnail={text('thumbnail', images.suit)}
       />
     </TileContainer>
   ));

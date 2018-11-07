@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { computeAreasCount } from '../carousel';
-import { PhotoTile, QuoteTile, VideoTile } from '../tile/tile';
+import { PhotoTile, QuoteTile, VideoTile } from '../tile';
 
 const switchTile = tile => {
   const props = {
