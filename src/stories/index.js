@@ -6,6 +6,7 @@ import { Grid } from '../ui/grid';
 import { number, text, withKnobs } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
+import { Navigation } from '../ui/button';
 
 const images = {
   laundry:
@@ -168,3 +169,10 @@ storiesOf('Tiles', module)
 storiesOf('Progress', module)
   .addDecorator(withKnobs)
   .add('horizontal', () => <Progress percentage={number('percentage', 50)} />);
+
+storiesOf('Button', module)
+  .addDecorator(withKnobs)
+  .add('arrows', () => [
+    <Navigation direction="left" />,
+    <Navigation direction="right" />,
+  ]);

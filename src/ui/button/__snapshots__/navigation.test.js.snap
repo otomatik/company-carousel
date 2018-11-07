@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should match snapshot - left 1`] = `
+<styled.button>
+  <ArrowLeft />
+</styled.button>
+`;
+
+exports[`Navigation should match snapshot - right (default) 1`] = `
+<styled.button>
+  <ArrowRight />
+</styled.button>
+`;
