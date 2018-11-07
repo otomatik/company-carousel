@@ -1,1 +1,1 @@
-export { Grid, TILE_COUNT } from './grid';
+export { Grid } from './grid';

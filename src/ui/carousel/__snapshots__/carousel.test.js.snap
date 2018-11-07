@@ -5,12 +5,19 @@ exports[`Carousel should match snapshot 1`] = `
   columns={2}
 >
   <styled.div>
-    header
+    <Navigation
+      direction="left"
+      onClick={[Function]}
+    />
+    <Navigation
+      direction="right"
+      onClick={[Function]}
+    />
   </styled.div>
   <styled.div>
     <Grid
       columns={2}
-      currentArea={1}
+      currentArea={0}
       rows={2}
       tiles={
         Array [
@@ -28,7 +35,7 @@ exports[`Carousel should match snapshot 1`] = `
     />
   </styled.div>
   <Progress
-    percentage={66.66666666666667}
+    percentage={33.333333333333336}
   />
   <styled.div>
     footer
@@ -41,7 +48,14 @@ exports[`Carousel should match snapshot, when cursor is 0 then percentage is 20 
   columns={1}
 >
   <styled.div>
-    header
+    <Navigation
+      direction="left"
+      onClick={[Function]}
+    />
+    <Navigation
+      direction="right"
+      onClick={[Function]}
+    />
   </styled.div>
   <styled.div>
     <Grid
@@ -77,12 +91,19 @@ exports[`Carousel should match snapshot, when is mobile = "true" then column is 
   columns={1}
 >
   <styled.div>
-    header
+    <Navigation
+      direction="left"
+      onClick={[Function]}
+    />
+    <Navigation
+      direction="right"
+      onClick={[Function]}
+    />
   </styled.div>
   <styled.div>
     <Grid
       columns={1}
-      currentArea={1}
+      currentArea={0}
       rows={2}
       tiles={
         Array [
@@ -100,7 +121,7 @@ exports[`Carousel should match snapshot, when is mobile = "true" then column is 
     />
   </styled.div>
   <Progress
-    percentage={40}
+    percentage={20}
   />
   <styled.div>
     footer

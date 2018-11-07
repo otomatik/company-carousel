@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-export const Navigation = ({ direction }) => (
-  <Circle>{direction === 'left' ? <ArrowLeft /> : <ArrowRight />}</Circle>
+export const Navigation = ({ direction, onClick }) => (
+  <Circle onClick={onClick}>
+    {direction === 'left' ? <ArrowLeft /> : <ArrowRight />}
+  </Circle>
 );
 
 Navigation.propTypes = {
   direction: PropTypes.oneOf(['left', 'right']),
+  onClick: PropTypes.func,
 };
 
 const Arrow = styled.i`
@@ -18,9 +21,8 @@ const Arrow = styled.i`
 
 const Circle = styled.button`
   position: relative;
-  height: 40px;
-  width: 40px;
-  margin: 10px;
+  height: 30px;
+  width: 30px;
   padding: 0;
   outline: 0 none;
   border: none;

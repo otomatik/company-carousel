@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Progress } from '../ui/progress';
 import { Carousel } from '../ui/carousel';
 import { Grid } from '../ui/grid';
+import { action } from '@storybook/addon-actions';
 import { number, text, withKnobs } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
@@ -81,13 +82,10 @@ const data = {
 };
 
 storiesOf('Carousel', module)
-  .addDecorator(withKnobs)
-  .add('desktop', () => (
-    <Carousel data={data} columns={2} rows={2} cursor={number('cursor', 0)} />
-  ))
+  .add('desktop', () => <Carousel data={data} columns={2} rows={2} />)
   .add('mobile', () => (
     <MobileContainer>
-      <Carousel data={data} mobile rows={2} cursor={number('cursor', 0)} />
+      <Carousel data={data} mobile rows={2} />
     </MobileContainer>
   ));
 
@@ -173,6 +171,6 @@ storiesOf('Progress', module)
 storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('arrows', () => [
-    <Navigation direction="left" />,
-    <Navigation direction="right" />,
+    <Navigation direction="left" onClick={action('clicked')} />,
+    <Navigation direction="right" onClick={action('clicked')} />,
   ]);

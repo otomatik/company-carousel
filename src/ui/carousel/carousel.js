@@ -1,46 +1,71 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Progress } from '../progress';
 import { Grid } from '../grid';
 import PropTypes from 'prop-types';
+import { Navigation } from '../button';
 
 export const computeAreasCount = (totalTiles, columns, rows) =>
   Math.ceil(totalTiles / Math.max(columns * rows, 1));
 
-export const Carousel = ({ mobile, cursor, columns, rows, data }) => {
-  const { tiles } = data;
-
-  if (mobile) {
-    columns = 1;
-  }
-
-  const areasCount = computeAreasCount(tiles.length, columns, rows);
-  const avoidDivisionByZero = Math.max(areasCount, 1);
-  const percentage = ((cursor + 1) * 100) / avoidDivisionByZero;
-
-  const gridProps = {
-    currentArea: cursor,
-    columns,
-    rows,
-    tiles,
+export class Carousel extends Component {
+  state = {
+    currentArea: 0,
   };
-  return (
-    <Container columns={columns}>
-      <Header>header</Header>
-      <Content>
-        <Grid {...gridProps} />
-      </Content>
-      <Progress percentage={percentage} />
-      <Footer>footer</Footer>
-    </Container>
-  );
-};
+
+  moveToTheRight = areasCount => () =>
+    this.state.currentArea < areasCount - 1
+      ? this.setState({ currentArea: this.state.currentArea + 1 })
+      : null;
+
+  moveToTheLeft = () =>
+    this.state.currentArea > 0
+      ? this.setState({ currentArea: this.state.currentArea - 1 })
+      : null;
+
+  render() {
+    const { mobile, rows, data } = this.props;
+    const { currentArea } = this.state;
+    let columns = this.props.columns;
+    const { tiles } = data;
+
+    if (mobile) {
+      columns = 1;
+    }
+
+    const areasCount = computeAreasCount(tiles.length, columns, rows);
+    const avoidDivisionByZero = Math.max(areasCount, 1);
+    const percentage = ((currentArea + 1) * 100) / avoidDivisionByZero;
+
+    const gridProps = {
+      currentArea,
+      columns,
+      rows,
+      tiles,
+    };
+    return (
+      <Container columns={columns}>
+        <Header>
+          <Navigation direction="left" onClick={this.moveToTheLeft} />
+          <Navigation
+            direction="right"
+            onClick={this.moveToTheRight(areasCount)}
+          />
+        </Header>
+        <Content>
+          <Grid {...gridProps} />
+        </Content>
+        <Progress percentage={percentage} />
+        <Footer>footer</Footer>
+      </Container>
+    );
+  }
+}
 
 Carousel.propTypes = {
   data: PropTypes.object.isRequired,
-  cursor: PropTypes.number.isRequired,
   rows: PropTypes.number.isRequired,
-  columns: PropTypes.number.isRequired,
+  columns: PropTypes.number,
   mobile: PropTypes.bool,
 };
 
@@ -53,6 +78,9 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background: #333;
   color: white;
   height: 50px;
