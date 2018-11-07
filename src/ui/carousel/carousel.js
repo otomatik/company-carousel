@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Progress } from '../progress';
 import { Grid } from '../grid';
+import PropTypes from 'prop-types';
 
 export const computeAreasCount = (totalTiles, columns, rows) =>
   Math.ceil(totalTiles / Math.max(columns * rows, 1));
@@ -31,6 +32,14 @@ export const Carousel = ({ mobile, cursor, columns, rows, data }) => {
       <Footer>footer</Footer>
     </Container>
   );
+};
+
+Carousel.propTypes = {
+  data: PropTypes.array.isRequired,
+  cursor: PropTypes.number.isRequired,
+  rows: PropTypes.number.isRequired,
+  columns: PropTypes.number.isRequired,
+  mobile: PropTypes.bool,
 };
 
 const Container = styled.div`

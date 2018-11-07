@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Tile } from '../tile';
+import PropTypes from 'prop-types';
 import { computeAreasCount } from '../carousel';
 import { PhotoTile, QuoteTile, VideoTile } from '../tile/tile';
 
@@ -33,6 +33,13 @@ export const Grid = ({ columns, rows, currentArea, tiles }) => {
       {tiles.map(tile => switchTile(tile))}
     </Container>
   );
+};
+
+Grid.propTypes = {
+  tiles: PropTypes.array.isRequired,
+  currentArea: PropTypes.number.isRequired,
+  rows: PropTypes.number.isRequired,
+  columns: PropTypes.number.isRequired,
 };
 
 const Container = styled.div`

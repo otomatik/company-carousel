@@ -1,9 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LinkTile should match snapshot 1`] = `
+<styled.a
+  href="http://"
+>
+  <Tile
+    color="yellow"
+  >
+    tuile
+  </Tile>
+</styled.a>
+`;
+
+exports[`QuoteTile should match snapshot 1`] = `
+<Tile
+  color="#333"
+>
+  coucou
+</Tile>
+`;
+
 exports[`Tile should match snapshot 1`] = `
 <styled.div
   color="yellow"
 >
   tuile
 </styled.div>
+`;
+
+exports[`VideoTile should match snapshot 1`] = `
+<LinkTile
+  color="red"
+  url="http://"
+>
+  <styled.div
+    thumbnail="http://"
+  />
+</LinkTile>
+`;
+
+exports[`VideoTile should match snapshot 2`] = `
+<LinkTile
+  color="yellow"
+  url="http://"
+>
+  <styled.div
+    thumbnail="http://"
+  />
+</LinkTile>
 `;
