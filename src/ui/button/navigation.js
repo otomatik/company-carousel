@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export const Navigation = ({ direction, onClick }) => (
-  <Circle onClick={onClick}>
+  <Circle alt="Navigation" onClick={onClick}>
     {direction === 'left' ? <ArrowLeft /> : <ArrowRight />}
   </Circle>
 );

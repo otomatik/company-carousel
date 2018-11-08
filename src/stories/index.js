@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
-import { Navigation } from '../ui/button';
+import { Navigation, Play } from '../ui/button';
 
 const images = {
   laundry:
@@ -24,7 +24,7 @@ const tiles = [
   {
     id: '1',
     kind: 'quote',
-    data: { text: 'essai' },
+    data: { text: 'Citation' },
   },
   {
     id: '2',
@@ -32,6 +32,8 @@ const tiles = [
     data: {
       url: '',
       thumbnail: images.suit,
+      title: 'Crédit',
+      subtitle: 'Photographer',
     },
   },
   {
@@ -45,12 +47,17 @@ const tiles = [
   {
     id: '4',
     kind: 'quote',
-    data: { text: 'essai' },
+    data: { text: 'Citation' },
   },
   {
     id: '5',
     kind: 'video',
-    data: { url: '', thumbnail: images.cat },
+    data: {
+      url: '',
+      thumbnail: images.cat,
+      title: 'Crédit',
+      subtitle: 'Photographer',
+    },
   },
   {
     id: '6',
@@ -60,12 +67,17 @@ const tiles = [
   {
     id: '7',
     kind: 'quote',
-    data: { text: 'essai' },
+    data: { text: 'Citation' },
   },
   {
     id: '8',
     kind: 'video',
-    data: { url: '', thumbnail: images.sheep },
+    data: {
+      url: '',
+      thumbnail: images.sheep,
+      title: 'Crédit',
+      subtitle: 'Photographer',
+    },
   },
   {
     id: '9',
@@ -159,6 +171,8 @@ storiesOf('Tiles', module)
   .add('Video', () => (
     <TileContainer>
       <VideoTile
+        title="Titre"
+        subtitle="Sous-titre"
         url={text('url', 'http://')}
         thumbnail={text('thumbnail', images.suit)}
       />
@@ -174,4 +188,5 @@ storiesOf('Button', module)
   .add('arrows', () => [
     <Navigation key="left" direction="left" onClick={action('clicked')} />,
     <Navigation key="right" direction="right" onClick={action('clicked')} />,
-  ]);
+  ])
+  .add('play', () => <Play onClick={action('play')} />);

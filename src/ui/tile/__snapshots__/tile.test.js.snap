@@ -38,6 +38,13 @@ exports[`VideoTile should match snapshot 1`] = `
   <styled.div
     thumbnail="http://"
   />
+  <styled.div>
+    <Play />
+    <styled.div>
+      <styled.p />
+      <Styled(styled.p) />
+    </styled.div>
+  </styled.div>
 </LinkTile>
 `;
 
