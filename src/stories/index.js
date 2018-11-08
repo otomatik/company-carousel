@@ -4,7 +4,7 @@ import { Progress } from '../ui/progress';
 import { Carousel } from '../ui/carousel';
 import { Grid } from '../ui/grid';
 import { action } from '@storybook/addon-actions';
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
+import { number, text, withKnobs } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
 import { More, Navigation, Play } from '../ui/button';
@@ -91,8 +91,9 @@ const tiles = [
 ];
 
 const data = {
-  companyName: 'The boring company',
-  companyLogo: 'http://',
+  companyName: 'Yummy company',
+  companyLogo:
+    'https://www.graphicsprings.com/filestorage/stencils/56c6a0fe23aaf1279c73b9940b2fc873.png?width=500&height=500',
   wttjProfile: 'http://',
   tiles,
 };

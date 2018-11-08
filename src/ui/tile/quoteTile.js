@@ -22,7 +22,6 @@ const Blockquote = styled.blockquote`
   font-size: 20px;
   width: 100%;
   z-index: 1;
-  font-family: 'Helvetica', sans-serif;
 
   &::before {
     position: absolute;

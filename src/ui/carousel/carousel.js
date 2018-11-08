@@ -90,15 +90,28 @@ export class Carousel extends Component {
     };
     return (
       <Container columns={columns}>
-        <Header>
-          <Navigation direction="left" onClick={this.moveToTheLeft} />
-          <Navigation direction="right" onClick={this.moveToTheRight} />
-        </Header>
+        <Bar>
+          <Company>
+            <Logo src={data.companyLogo} />
+            <Name>{data.companyName}</Name>
+          </Company>
+          <Nav>
+            <li>
+              <Navigation direction="left" onClick={this.moveToTheLeft} />
+            </li>
+            <li>
+              <Navigation direction="right" onClick={this.moveToTheRight} />
+            </li>
+          </Nav>
+        </Bar>
         <Content>
           <Grid {...gridProps} />
         </Content>
         <Progress percentage={percentage} />
-        <Footer>footer</Footer>
+        <Bar>
+          <WTTJ />
+          <OpenProfile href={data.wttjProfile}>Voir le profil</OpenProfile>
+        </Bar>
       </Container>
     );
   }
@@ -118,15 +131,42 @@ const Container = styled.div`
   flex: 1;
   height: 100vh;
   overflow: hidden;
+  font-family: Helvetica, sans-serif;
 `;
 
-const Header = styled.div`
+const Bar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   background: #333;
   color: white;
   height: 50px;
+  padding: 0 10px;
+`;
+
+const Company = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
+
+const Logo = styled.img`
+  height: 100%;
+`;
+
+const Name = styled.p`
+  padding-left: 10px;
+`;
+
+const Nav = styled.ul`
+  display: flex;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-left: 5px;
+  }
 `;
 
 const Content = styled.div`
@@ -135,8 +175,22 @@ const Content = styled.div`
   height: calc(100% - 100px);
 `;
 
-const Footer = styled.div`
-  background: #333;
+const WTTJ = styled.div`
+  height: 80%;
+  width: 100px;
+  background: url('https://cdn.welcometothejungle.co/wttj-front/assets/images/logos/wttj-long.svg?v=9d42bd524a64e8477f5e3a087b7add89')
+    no-repeat center center;
+  background-size: contain;
+`;
+
+const OpenProfile = styled.a`
+  text-align: right;
   color: white;
-  height: 50px;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: rgb(0, 194, 154);
+  }
 `;

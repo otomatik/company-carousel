@@ -42,7 +42,6 @@ const Text = styled.div`
 const Title = styled.p`
   margin: 0;
   font-size: 16px;
-  font-family: 'Helvetica', sans-serif;
 `;
 const SubTitle = styled(Title)`
   font-size: 12px;
