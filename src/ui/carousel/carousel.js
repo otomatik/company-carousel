@@ -110,7 +110,7 @@ export class Carousel extends Component {
         <Progress percentage={percentage} />
         <Bar>
           <WTTJ />
-          <OpenProfile href={data.wttjProfile}>Voir le profil</OpenProfile>
+          <OpenProfile href={data.wttjProfile}>Voir les offres</OpenProfile>
         </Bar>
       </Container>
     );

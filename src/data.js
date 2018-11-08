@@ -16,18 +16,18 @@ export const images = {
 export const tiles = [
   {
     id: '1',
-    kind: 'quote',
-    data: { text: 'Citation' },
-  },
-  {
-    id: '2',
     kind: 'video',
     data: {
       url: '',
       thumbnail: images.sushi,
-      title: 'Crédit',
-      subtitle: 'Photographer',
+      title: 'Sushi',
+      subtitle: '',
     },
+  },
+  {
+    id: '2',
+    kind: 'quote',
+    data: { text: 'Manger est bon. Avoir mangé est meilleur.' },
   },
   {
     id: '3',
@@ -39,28 +39,21 @@ export const tiles = [
   },
   {
     id: '4',
-    kind: 'quote',
-    data: { text: 'Citation' },
-  },
-  {
-    id: '5',
     kind: 'video',
     data: {
       url: '',
       thumbnail: images.fries,
-      title: 'Crédit',
-      subtitle: 'Photographer',
+      title: 'Des frites',
+      subtitle: 'des frites, des frites',
     },
   },
   {
-    id: '6',
-    kind: 'photo',
-    data: { url: '', thumbnail: images.pancakes },
-  },
-  {
-    id: '7',
+    id: '5',
     kind: 'quote',
-    data: { text: 'Citation' },
+    data: {
+      text:
+        'La terre est la seule planète où trouver du chocolat, préservons-là.',
+    },
   },
   {
     id: '8',
@@ -68,9 +61,19 @@ export const tiles = [
     data: {
       url: '',
       thumbnail: images.donuts,
-      title: 'Crédit',
-      subtitle: 'Photographer',
+      title: 'Huuum Donuts!',
+      subtitle: 'Homer, Les Simpson',
     },
+  },
+  {
+    id: '7',
+    kind: 'photo',
+    data: { url: '', thumbnail: images.pancakes },
+  },
+  {
+    id: '8',
+    kind: 'quote',
+    data: { text: "J'adore les hashtags, ils ressemblent à des gauffres." },
   },
   {
     id: '9',

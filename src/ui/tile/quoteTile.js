@@ -19,6 +19,7 @@ const Blockquote = styled.blockquote`
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 40px;
   font-size: 20px;
   width: 100%;
   z-index: 1;
@@ -29,7 +30,7 @@ const Blockquote = styled.blockquote`
     font-weight: bold;
     font-size: 100px;
     color: gray;
-    padding-bottom: 30px;
+    top: 10px;
     z-index: -1;
     font-family: 'Georgia', serif;
   }
