@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`More should match snapshot 1`] = `
+<styled.button
+  alt="More"
+>
+  <styled.span />
+</styled.button>
+`;

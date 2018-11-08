@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
-import { Navigation, Play } from '../ui/button';
+import { More, Navigation, Play } from '../ui/button';
 
 const images = {
   laundry:
@@ -153,7 +153,7 @@ const TileContainer = styled.div`
   overflow: hidden;
 `;
 
-storiesOf('Tiles', module)
+storiesOf('Tile', module)
   .addDecorator(withKnobs)
   .add('Quote', () => (
     <TileContainer>
@@ -189,4 +189,5 @@ storiesOf('Button', module)
     <Navigation key="left" direction="left" onClick={action('clicked')} />,
     <Navigation key="right" direction="right" onClick={action('clicked')} />,
   ])
-  .add('play', () => <Play onClick={action('play')} />);
+  .add('play', () => <Play onClick={action('play')} />)
+  .add('more', () => <More onClick={action('more')} />);

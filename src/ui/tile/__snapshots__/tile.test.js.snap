@@ -55,5 +55,8 @@ exports[`VideoTile should match snapshot 2`] = `
   <styled.div
     thumbnail="http://"
   />
+  <styled.div>
+    <Styled(More) />
+  </styled.div>
 </LinkTile>
 `;
