@@ -56,7 +56,7 @@ export const tiles = [
     },
   },
   {
-    id: '8',
+    id: '6',
     kind: 'video',
     data: {
       url: '',
