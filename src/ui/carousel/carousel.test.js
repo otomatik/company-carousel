@@ -8,9 +8,7 @@ describe('Carousel', () => {
 
   it('should match snapshot', () => {
     // when
-    const carousel = shallow(
-      <Carousel columns={2} rows={2} cursor={1} data={data} />
-    );
+    const carousel = shallow(<Carousel columns={2} rows={2} data={data} />);
 
     // then
     expect(carousel).toMatchSnapshot();
@@ -19,7 +17,7 @@ describe('Carousel', () => {
   it('should match snapshot, when is mobile = "true" then column is overridden to "1"', () => {
     // when
     const carousel = shallow(
-      <Carousel mobile columns={2} rows={2} cursor={1} data={data} />
+      <Carousel mobile columns={2} rows={2} data={data} />
     );
 
     // then
@@ -29,7 +27,7 @@ describe('Carousel', () => {
   it('should match snapshot, when cursor is 0 then percentage is 20', () => {
     // when
     const carousel = shallow(
-      <Carousel mobile columns={2} rows={2} cursor={0} data={data} />
+      <Carousel mobile columns={2} rows={2} data={data} />
     );
 
     // then
