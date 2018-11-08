@@ -10,14 +10,18 @@ import { PhotoTile, QuoteTile, VideoTile } from '../ui/tile';
 import { More, Navigation, Play } from '../ui/button';
 
 const images = {
-  laundry:
-    'https://cdn.pixabay.com/photo/2014/08/08/20/54/laundry-413688_1280.jpg',
-  suit: 'https://cdn.pixabay.com/photo/2015/03/14/19/45/suit-673697_1280.jpg',
-  cat: 'https://cdn.pixabay.com/photo/2015/10/12/15/01/cat-984097_1280.jpg',
-  sheep:
-    'https://cdn.pixabay.com/photo/2016/11/13/21/46/sheep-1822137_1280.jpg',
-  pug: 'https://cdn.pixabay.com/photo/2016/02/19/11/53/pug-1210025_1280.jpg',
-  dry: 'https://cdn.pixabay.com/photo/2015/01/01/22/15/woman-586185_1280.jpg',
+  burger:
+    'https://images.unsplash.com/photo-1536857620814-08877a2162d5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=50578bf7f75e28eb9fb151dec11d4762&auto=format&fit=crop&w=1500&q=80',
+  sushi:
+    'https://images.unsplash.com/photo-1501735972267-d5c1bc03655c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d5c06ebc11a8030b7636bcbfac7cc2ff&auto=format&fit=crop&w=1500&q=80',
+  fries:
+    'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3c90e64f4b7225ca5d2d6aa9d824c4f&auto=format&fit=crop&w=1500&q=80',
+  donuts:
+    'https://images.unsplash.com/photo-1541390540380-fe43b8361ac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c026122030ec83c3443356ba6525c6c5&auto=format&fit=crop&w=668&q=80',
+  pancakes:
+    'https://images.unsplash.com/photo-1541288097308-7b8e3f58c4c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c988a8a0bb52434ffc0d3b326b15f4a&auto=format&fit=crop&w=1500&q=80',
+  salad:
+    'https://images.unsplash.com/photo-1540101042567-c3222809544b?ixlib=rb-0.3.5&s=9103452eff8bc630b68a57a99ee1d596&auto=format&fit=crop&w=668&q=80',
 };
 
 const tiles = [
@@ -31,7 +35,7 @@ const tiles = [
     kind: 'video',
     data: {
       url: '',
-      thumbnail: images.suit,
+      thumbnail: images.sushi,
       title: 'Crédit',
       subtitle: 'Photographer',
     },
@@ -41,7 +45,7 @@ const tiles = [
     kind: 'photo',
     data: {
       url: '',
-      thumbnail: images.laundry,
+      thumbnail: images.burger,
     },
   },
   {
@@ -54,7 +58,7 @@ const tiles = [
     kind: 'video',
     data: {
       url: '',
-      thumbnail: images.cat,
+      thumbnail: images.fries,
       title: 'Crédit',
       subtitle: 'Photographer',
     },
@@ -62,7 +66,7 @@ const tiles = [
   {
     id: '6',
     kind: 'photo',
-    data: { url: '', thumbnail: images.pug },
+    data: { url: '', thumbnail: images.pancakes },
   },
   {
     id: '7',
@@ -74,7 +78,7 @@ const tiles = [
     kind: 'video',
     data: {
       url: '',
-      thumbnail: images.sheep,
+      thumbnail: images.donuts,
       title: 'Crédit',
       subtitle: 'Photographer',
     },
@@ -82,7 +86,7 @@ const tiles = [
   {
     id: '9',
     kind: 'photo',
-    data: { url: '', thumbnail: images.dry },
+    data: { url: '', thumbnail: images.salad },
   },
 ];
 
@@ -164,7 +168,7 @@ storiesOf('Tile', module)
     <TileContainer>
       <PhotoTile
         url={text('url', 'http://')}
-        thumbnail={text('thumbnail', images.laundry)}
+        thumbnail={text('thumbnail', images.burger)}
       />
     </TileContainer>
   ))
@@ -174,7 +178,7 @@ storiesOf('Tile', module)
         title="Titre"
         subtitle="Sous-titre"
         url={text('url', 'http://')}
-        thumbnail={text('thumbnail', images.suit)}
+        thumbnail={text('thumbnail', images.sushi)}
       />
     </TileContainer>
   ));
