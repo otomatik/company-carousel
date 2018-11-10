@@ -4,26 +4,7 @@ exports[`Carousel should match snapshot 1`] = `
 <styled.div
   columns={2}
 >
-  <styled.div>
-    <styled.div>
-      <styled.img />
-      <styled.p />
-    </styled.div>
-    <styled.ul>
-      <li>
-        <Navigation
-          direction="left"
-          onClick={[Function]}
-        />
-      </li>
-      <li>
-        <Navigation
-          direction="right"
-          onClick={[Function]}
-        />
-      </li>
-    </styled.ul>
-  </styled.div>
+  <Header />
   <styled.div>
     <Grid
       columns={2}
@@ -47,12 +28,7 @@ exports[`Carousel should match snapshot 1`] = `
   <Progress
     percentage={33.333333333333336}
   />
-  <styled.div>
-    <styled.div />
-    <styled.a>
-      Voir les offres
-    </styled.a>
-  </styled.div>
+  <Footer />
 </styled.div>
 `;
 
@@ -60,26 +36,7 @@ exports[`Carousel should match snapshot, when currentArea is 0 then percentage i
 <styled.div
   columns={1}
 >
-  <styled.div>
-    <styled.div>
-      <styled.img />
-      <styled.p />
-    </styled.div>
-    <styled.ul>
-      <li>
-        <Navigation
-          direction="left"
-          onClick={[Function]}
-        />
-      </li>
-      <li>
-        <Navigation
-          direction="right"
-          onClick={[Function]}
-        />
-      </li>
-    </styled.ul>
-  </styled.div>
+  <Header />
   <styled.div>
     <Grid
       columns={1}
@@ -103,12 +60,7 @@ exports[`Carousel should match snapshot, when currentArea is 0 then percentage i
   <Progress
     percentage={20}
   />
-  <styled.div>
-    <styled.div />
-    <styled.a>
-      Voir les offres
-    </styled.a>
-  </styled.div>
+  <Footer />
 </styled.div>
 `;
 
@@ -116,26 +68,7 @@ exports[`Carousel should match snapshot, when is mobile = "true" then column is 
 <styled.div
   columns={1}
 >
-  <styled.div>
-    <styled.div>
-      <styled.img />
-      <styled.p />
-    </styled.div>
-    <styled.ul>
-      <li>
-        <Navigation
-          direction="left"
-          onClick={[Function]}
-        />
-      </li>
-      <li>
-        <Navigation
-          direction="right"
-          onClick={[Function]}
-        />
-      </li>
-    </styled.ul>
-  </styled.div>
+  <Header />
   <styled.div>
     <Grid
       columns={1}
@@ -159,11 +92,6 @@ exports[`Carousel should match snapshot, when is mobile = "true" then column is 
   <Progress
     percentage={20}
   />
-  <styled.div>
-    <styled.div />
-    <styled.a>
-      Voir les offres
-    </styled.a>
-  </styled.div>
+  <Footer />
 </styled.div>
 `;

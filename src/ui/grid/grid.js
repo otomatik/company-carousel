@@ -21,12 +21,13 @@ const switchTile = tile => {
   }
 };
 
-export const Grid = ({ columns, rows, currentArea, tiles }) => {
+export const Grid = ({ className, columns, rows, currentArea, tiles }) => {
   const containerProps = {
     totalColumns: columns * computeAreasCount(tiles.length, columns, rows),
     columns,
     rows,
     currentArea,
+    className,
   };
   return (
     <Container {...containerProps}>
@@ -54,5 +55,4 @@ const Container = styled.div`
   margin-left: -${props => props.currentArea * 100}%;
   height: 100%;
   width: 100%;
-  color: white;
 `;

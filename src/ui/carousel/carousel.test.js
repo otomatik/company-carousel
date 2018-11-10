@@ -55,9 +55,13 @@ describe('Carousel', () => {
 
     // when
     carousel
-      .find(Navigation)
+      .find('Header')
+      .dive()
+      .find('NavButton')
       .last()
-      .prop('onClick')();
+      .dive()
+      .find('Navigation')
+      .simulate('click');
 
     // then
     expect(carousel.state('currentArea')).toBe(1);
@@ -71,9 +75,13 @@ describe('Carousel', () => {
 
     // when
     carousel
-      .find(Navigation)
+      .find('Header')
+      .dive()
+      .find('NavButton')
       .last()
-      .prop('onClick')();
+      .dive()
+      .find('Navigation')
+      .simulate('click');
 
     // then
     expect(carousel.state('currentArea')).toBe(0);

@@ -20,39 +20,33 @@ export class Carousel extends Component {
     currentArea: 0,
   };
 
-  hasNotManuallyMoved = true;
-
   constructor(props) {
     super(props);
-    const { mobile, rows, data, autoplayInterval, autoplay, columns } = props;
+    const { mobile, rows, data, autoplay, columns } = props;
 
     this.columns = mobile ? 1 : columns;
 
-    this.state.areasCount = computeAreasCount(
-      data.tiles.length,
-      this.columns,
-      rows
-    );
+    this.areasCount = computeAreasCount(data.tiles.length, this.columns, rows);
 
     if (autoplay) {
-      this.intervalId = setInterval(
-        this.moveToTheRightIndefinitely,
-        autoplayInterval
-      );
+      this.startAutoplay();
     }
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalId);
+    this.stopAutoplay();
   }
 
-  moveToTheRightIndefinitely = () => {
-    if (this.hasNotManuallyMoved) {
-      this.moveToTheRightCyclically();
-    }
+  startAutoplay = () => {
+    this.intervalId = setInterval(
+      this.moveToTheRightCyclically,
+      this.props.autoplayInterval
+    );
   };
 
-  hasNotReachEnd = () => this.state.currentArea < this.state.areasCount - 1;
+  stopAutoplay = () => clearInterval(this.intervalId);
+
+  hasNotReachEnd = () => this.state.currentArea < this.areasCount - 1;
 
   moveToTheRightCyclically = () => {
     this.setState({
@@ -61,57 +55,70 @@ export class Carousel extends Component {
   };
 
   moveToTheRight = () => {
-    this.hasNotManuallyMoved = false;
     if (this.hasNotReachEnd()) {
       this.setState({ currentArea: this.state.currentArea + 1 });
     }
   };
 
   moveToTheLeft = () => {
-    this.hasNotManuallyMoved = false;
     const { currentArea } = this.state;
-    const hasNotReachStart = currentArea > 0;
-    if (hasNotReachStart) {
+    const hasNotReachBeginning = currentArea > 0;
+    if (hasNotReachBeginning) {
       this.setState({ currentArea: currentArea - 1 });
     }
   };
 
+  handleNavigationClick = direction => () => {
+    this.stopAutoplay();
+    direction === 'left' ? this.moveToTheLeft() : this.moveToTheRight();
+  };
+
   render() {
-    const { currentArea, areasCount } = this.state;
+    const { currentArea } = this.state;
     const { rows, data } = this.props;
     const columns = this.columns;
     const { tiles } = data;
-    const percentage = ((currentArea + 1) * 100) / areasCount;
+    const percentage = ((currentArea + 1) * 100) / this.areasCount;
     const gridProps = {
       currentArea,
       columns,
       rows,
       tiles,
     };
+    const NavButton = ({ direction }) => (
+      <li>
+        <Navigation
+          direction={direction}
+          onClick={this.handleNavigationClick(direction)}
+        />
+      </li>
+    );
+    const Header = () => (
+      <Bar>
+        <Company>
+          <Logo src={data.companyLogo} />
+          <Name>{data.companyName}</Name>
+        </Company>
+        <NavigationButtons>
+          <NavButton direction="left" />
+          <NavButton direction="right" />
+        </NavigationButtons>
+      </Bar>
+    );
+    const Footer = () => (
+      <Bar>
+        <WTTJ />
+        <OpenProfile href={data.wttjProfile}>Voir les offres</OpenProfile>
+      </Bar>
+    );
     return (
       <Container columns={columns}>
-        <Bar>
-          <Company>
-            <Logo src={data.companyLogo} />
-            <Name>{data.companyName}</Name>
-          </Company>
-          <Nav>
-            <li>
-              <Navigation direction="left" onClick={this.moveToTheLeft} />
-            </li>
-            <li>
-              <Navigation direction="right" onClick={this.moveToTheRight} />
-            </li>
-          </Nav>
-        </Bar>
+        <Header />
         <Content>
           <Grid {...gridProps} />
         </Content>
         <Progress percentage={percentage} />
-        <Bar>
-          <WTTJ />
-          <OpenProfile href={data.wttjProfile}>Voir les offres</OpenProfile>
-        </Bar>
+        <Footer />
       </Container>
     );
   }
@@ -134,6 +141,7 @@ const Container = styled.div`
   font-family: Helvetica, sans-serif;
 `;
 
+const BarHeight = 50;
 const Bar = styled.div`
   display: flex;
   flex-direction: row;
@@ -141,7 +149,7 @@ const Bar = styled.div`
   justify-content: space-between;
   background: #333;
   color: white;
-  height: 50px;
+  height: ${BarHeight}px;
   padding: 0 10px;
 `;
 
@@ -159,7 +167,7 @@ const Name = styled.p`
   padding-left: 10px;
 `;
 
-const Nav = styled.ul`
+const NavigationButtons = styled.ul`
   display: flex;
   padding: 0;
   list-style: none;
@@ -171,8 +179,7 @@ const Nav = styled.ul`
 
 const Content = styled.div`
   background: #333;
-  color: white;
-  height: calc(100% - 100px);
+  height: calc(100% - ${BarHeight * 2}px);
 `;
 
 const WTTJ = styled.div`

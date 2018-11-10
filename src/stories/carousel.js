@@ -15,6 +15,6 @@ export const carouselStories = storiesOf('Carousel', module)
 
 const MobileContainer = styled.div`
   height: 100vh;
-  width: 30vw;
+  width: 300px;
   overflow: hidden;
 `;
