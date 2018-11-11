@@ -944,6 +944,13 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
+"@storybook/addon-centered@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-4.0.4.tgz#7376311d0c85d7040041f18d076f3c44085e6d93"
+  integrity sha512-KbSbRkDEJFylBdTbLUX32AfyYL/2XioAh7xUFfuZsli5n0pelxDiIg2Kcp8lqX/2KuYH1agSW40GR0o7V1jlWg==
+  dependencies:
+    global "^4.3.2"
+
 "@storybook/addon-jest@4.0.4":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-4.0.4.tgz#7bf29bad668c9b83a1dd9c5d8b20fbe621167372"

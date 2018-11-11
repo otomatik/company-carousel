@@ -13,6 +13,7 @@ Progress.propTypes = {
 };
 
 const Container = styled.div`
+  display: flex;
   flex: 1;
   height: 4px;
   background: #333;
