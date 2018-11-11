@@ -4,6 +4,7 @@ exports[`More should match snapshot 1`] = `
 <styled.button
   alt="More"
 >
+  More
   <styled.span />
 </styled.button>
 `;

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const Navigation = ({ direction, onClick }) => (
   <Circle alt="Navigation" onClick={onClick}>
     {direction === 'left' ? <ArrowLeft /> : <ArrowRight />}
+    Nav
   </Circle>
 );
 
@@ -27,11 +28,13 @@ const Circle = styled.button`
   outline: 0 none;
   border: none;
   background: #222;
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-size: 0;
 
   &:active {
     transform: translateY(2px);

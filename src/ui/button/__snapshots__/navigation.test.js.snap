@@ -5,6 +5,7 @@ exports[`Navigation should match snapshot - left 1`] = `
   alt="Navigation"
 >
   <ArrowLeft />
+  Nav
 </styled.button>
 `;
 
@@ -13,5 +14,6 @@ exports[`Navigation should match snapshot - right (default) 1`] = `
   alt="Navigation"
 >
   <ArrowRight />
+  Nav
 </styled.button>
 `;

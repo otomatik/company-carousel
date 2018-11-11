@@ -96,7 +96,7 @@ export class Carousel extends Component {
     const Header = () => (
       <Bar>
         <Company>
-          <Logo src={data.companyLogo} />
+          <Logo src={data.companyLogo} alt={data.companyName} />
           <Name>{data.companyName}</Name>
         </Company>
         <NavigationButtons>

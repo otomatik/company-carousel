@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const More = ({ onClick, className }) => (
   <Circle className={className} alt="More" onClick={onClick}>
+    More
     <Glass />
   </Circle>
 );
@@ -25,7 +26,7 @@ const Circle = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: white;
+  font-size: 0;
 `;
 
 const Glass = styled.span`
