@@ -7,6 +7,7 @@ import React from 'react';
 
 export const tileStories = storiesOf('Tile', module)
   .addDecorator(withKnobs)
+  .addParameters({ jest: ['tile'] })
   .add('Quote', () => (
     <TileContainer>
       <QuoteTile text={text('quote', 'coucou')} />

@@ -5,4 +5,14 @@ import React from 'react';
 
 export const progressStories = storiesOf('Progress', module)
   .addDecorator(withKnobs)
-  .add('horizontal', () => <Progress percentage={number('percentage', 50)} />);
+  .addParameters({ jest: ['progress'] })
+  .add('horizontal', () => (
+    <Progress
+      percentage={number('percentage', 50, {
+        range: true,
+        min: 0,
+        max: 100,
+        step: 10,
+      })}
+    />
+  ));

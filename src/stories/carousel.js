@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import React from 'react';
 
 export const carouselStories = storiesOf('Carousel', module)
+  .addParameters({ jest: ['carousel'] })
   .add('desktop', () => <Carousel data={data} columns={2} rows={2} />)
   .add('autoplay', () => <Carousel autoplay data={data} columns={2} rows={2} />)
   .add('mobile', () => (

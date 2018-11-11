@@ -944,6 +944,19 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
+"@storybook/addon-jest@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-jest/-/addon-jest-4.0.4.tgz#7bf29bad668c9b83a1dd9c5d8b20fbe621167372"
+  integrity sha512-8+GhraIU0pJDBGjoGw7zlYeSkmyha4zR050xgnOtDbsaYIFI/BZ8GdlkZiikwwIHgRqAr/gA22vG0mAaRz9uyA==
+  dependencies:
+    "@emotion/styled" "^0.10.6"
+    "@storybook/addons" "4.0.4"
+    "@storybook/components" "4.0.4"
+    global "^4.3.2"
+    prop-types "^15.6.2"
+    upath "^1.1.0"
+    util-deprecate "^1.0.2"
+
 "@storybook/addon-knobs@4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-4.0.2.tgz#cc16e913dbb51d4b10c07e4dc2e01fd841e30fa4"
@@ -11008,7 +11021,7 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
-upath@^1.0.5:
+upath@^1.0.5, upath@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
   integrity sha512-bzpH/oBhoS/QI/YtbkqCg6VEiPYjSZtrHQM6/QnJS6OL9pKUFLqb3aFh4Scvwm45+7iAgiMkLhSbaZxUqmrprw==

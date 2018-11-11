@@ -7,6 +7,7 @@ import React from 'react';
 
 export const gridStories = storiesOf('Grid', module)
   .addDecorator(withKnobs)
+  .addParameters({ jest: ['grid'] })
   .add('default', () => (
     <GridContainer>
       <Grid
