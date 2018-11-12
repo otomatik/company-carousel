@@ -20,7 +20,7 @@ const Circle = styled.button`
   padding: 0px;
   outline: 0 none;
   border: none;
-  background: rgb(0, 194, 154);
+  background: ${props => props.theme.colors.primary};
   border-radius: 50%;
   display: flex;
   align-items: center;

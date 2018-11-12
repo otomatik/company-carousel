@@ -147,7 +147,7 @@ const Bar = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: #333;
+  background: ${props => props.theme.colors.secondary};
   color: white;
   height: ${BarHeight}px;
   padding: 0 10px;
@@ -178,7 +178,7 @@ const NavigationButtons = styled.ul`
 `;
 
 const Content = styled.div`
-  background: #333;
+  background: ${props => props.theme.colors.secondary};
   height: calc(100% - ${BarHeight * 2}px);
 `;
 
@@ -198,6 +198,6 @@ const OpenProfile = styled.a`
   text-transform: uppercase;
 
   &:hover {
-    color: rgb(0, 194, 154);
+    color: ${props => props.theme.colors.primary};
   }
 `;

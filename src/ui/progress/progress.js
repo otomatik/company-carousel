@@ -16,12 +16,12 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   height: 4px;
-  background: #333;
+  background: ${props => props.theme.colors.secondary};
 `;
 
 const Fill = styled.div`
   height: 100%;
   width: ${props => props.percentage}%;
   transition: width 300ms ease-in-out;
-  background: rgb(0, 194, 154);
+  background: ${props => props.theme.colors.primary};
 `;
